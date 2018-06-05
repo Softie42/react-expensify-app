@@ -20,6 +20,7 @@ beforeEach(() => {
       sortByAmount={sortByAmount}
       setStartDate={setStartDate}
       setEndDate={setEndDate}
+      displayFormat="DD/MM/YYYY"
     />
   );
 });
