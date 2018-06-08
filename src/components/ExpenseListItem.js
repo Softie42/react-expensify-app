@@ -6,21 +6,23 @@ import numeral from 'numeral';
 // This file no longer needs to destructure dispatch from the expense props passed in
 
 // load a locale
-numeral.register('locale', 'uk', {
-  delimiters: {
-      thousands: ',',
-      decimal: '.'
-  },
-  abbreviations: {
-      thousand: 'k',
-      million: 'm',
-      billion: 'b',
-      trillion: 't'
-  },
-  currency: {
-      symbol: '£'
-  }
-});
+if (numeral.locales['uk'] === undefined) {
+  numeral.register('locale', 'uk', {
+    delimiters: {
+        thousands: ',',
+        decimal: '.'
+    },
+    abbreviations: {
+        thousand: 'k',
+        million: 'm',
+        billion: 'b',
+        trillion: 't'
+    },
+    currency: {
+        symbol: '£'
+    }
+  });
+}
 
 // Choose the new uk locale
 numeral.locale('uk');
